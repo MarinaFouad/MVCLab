@@ -1,0 +1,14 @@
+﻿@model Department
+@{
+    Layout = "View";
+}
+    <form method="post" asp-action="Edit">
+        <br />
+
+        <input type="hidden" asp-for="Id" /> <br />
+
+    <label asp-for="Name"></label><input asp-for="Name" class=" btn btn-danger" /> <br />
+
+        <input type="submit" value="Update Department" class="btn btn-info" />
+    </form>
+

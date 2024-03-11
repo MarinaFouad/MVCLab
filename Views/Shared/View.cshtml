@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div >
+        <a asp-action="index" asp-controller="student" class="btn-danger"> Student</a>
+
+        <a asp-action="index" asp-controller="Department" class="btn-danger"> Department</a>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <li >
+                <a  asp-controller="Account" asp-action="Logout">
+                    Logout @User.Identity.Name
+                </a>
+            </li>
+        }
+        else
+        {
+            <li >
+                <a  asp-controller="Account" asp-action="Login">
+                    Login
+                </a>
+            </li>
+        }
+    </div>
+
+    @RenderBody()
+      <script src="/lib/jquery/dist/jquery.js"></script>
+    @RenderSection("scripts",false)
+    <div>
+        <h1 class=" alert alert-dark">Footer </h1>
+
+    </div>
+</body>
+</html>

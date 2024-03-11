@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Student>
+@{
+    Layout = "View";
+}
+    <a asp-action="Add" asp-controller="Student" class=" btn btn-danger"> Add student </a>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>ID</td>
+                <td>Email</td>
+                <td>Age</td>
+            </tr>
+
+        </thead>
+        <tbody>
+            <ul>
+                @foreach (var item in Model)
+                {
+
+                <tr>
+                    <td> @item.Name</td>
+                    <td>@item.Id </td>
+                    <td>@item.Email</td>
+                    <td>@item.Age</td>
+                    <td>
+                    <a asp-action="Details" asp-controller="Student" asp-route-id="@item.Id" class=" btn btn-danger"> Details </a>
+
+                    <a asp-action="Delete" asp-controller="Student" asp-route-id="@item.Id" class=" btn btn-danger"> Delete </a>
+                   
+                    <a asp-action="Edit" asp-controller="Student" asp-route-id="@item.Id" class=" btn btn-danger"> Edit </a>
+
+                </td>
+                </tr>
+                }
+            </ul>
+        </tbody>
+    </table>
+

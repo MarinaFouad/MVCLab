@@ -1,0 +1,27 @@
+﻿@model Student
+@{
+    Layout = "View";
+}
+    <form method="post">
+    </br><div asp-validation-summary="ModelOnly"></div> 
+    <label asp-for="Name"></label><input asp-for="Name"  /> 
+    <span asp-validation-for="Name"></span>
+    <br />
+    <label asp-for="Email"></label><input asp-for="Email" /> 
+    <span asp-validation-for="Email"></span>
+   <br />
+    <label asp-for="Age"></label><input asp-for="Age" /> 
+    <span asp-validation-for="Age"></span>
+    <br />
+    <select asp-for="DepartmentId" >
+       
+        @foreach (var department in ViewBag.Departments)
+        {
+            <option value="@department.Id">@department.Name</option>
+        }
+    </select>
+    <input type="submit" value="Add Student" class=" btn btn-info" />
+    </form>
+@section Scripts {
+    <partial name="validation" />
+}

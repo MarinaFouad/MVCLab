@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+<form asp-action="Login" asp-controller="Account">
+
+    <label for="username">Login</label>
+    <input  type="text" name="username" />
+    <br />
+    <label  for="roletype">Role</label>
+    <select   name="roletype">
+        <option value=1>Student</option>
+        <option value=2>teacher</option>
+        <option value=3>Admin</option>
+    </select>
+    <br />
+    <button  type="submit">Login</button>
+
+</form>

@@ -1,0 +1,22 @@
+﻿@model Student
+@{
+    Layout = "View";
+}
+    <form method="post" asp-action="Edit">
+        <br />
+
+        <input type="hidden" asp-for="Id" /> <br />
+
+    <label asp-for="Name"></label><input asp-for="Name" class=" btn btn-danger" /> <br />
+    <label asp-for="Email"></label><input asp-for="Email" class=" btn btn-danger" /> <br />
+    <label asp-for="Age"></label><input asp-for="Age" class=" btn btn-danger" /> <br />
+    <select asp-for="DepartmentId">
+
+        @foreach (var department in ViewBag.Department)
+        {
+            <option value="@department.Id">@department.Name</option>
+        }
+    </select>
+        <input type="submit" value="Update Student" class="btn btn-info" />
+    </form>
+
